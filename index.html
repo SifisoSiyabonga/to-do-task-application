@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow // Advanced To-Do Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-square-check"></i>
+                <h1>TaskFlow</h1>
+            </div>
+            <p class="subtitle">Elevate your daily productivity</p>
+        </header>
+
+        <section class="stats-container">
+            <div class="stat-card">
+                <span id="total-tasks" class="stat-number">0</span>
+                <span class="stat-label">Created</span>
+            </div>
+            <div class="stat-card">
+                <span id="pending-tasks" class="stat-number">0</span>
+                <span class="stat-label">Pending</span>
+            </div>
+            <div class="stat-card">
+                <span id="completed-tasks" class="stat-number">0</span>
+                <span class="stat-label">Completed</span>
+            </div>
+        </section>
+
+        <div class="input-section">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search tasks...">
+            </div>
+
+            <div class="todo-input-wrapper">
+                <input type="text" id="taskInput" placeholder="Add a new task...">
+                <button id="addBtn">
+                    <i class="fa-solid fa-plus"></i> Add Task
+                </button>
+            </div>
+            <p id="error-message" class="error-msg"></p>
+        </div>
+
+        <div class="controls-row">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            <div class="action-buttons">
+                <button id="clearCompletedBtn" title="Clear Completed Tasks">
+                    <i class="fa-solid fa-broom"></i> Clear Completed
+                </button>
+                <button id="deleteAllBtn" class="danger-btn" title="Delete All Tasks">
+                    <i class="fa-solid fa-trash-can"></i> Clear All
+                </button>
+            </div>
+        </div>
+
+        <main class="list-container">
+            <ul id="taskList">
+                </ul>
+            <div id="empty-state" class="empty-state">
+                <i class="fa-regular fa-clipboard"></i>
+                <p>You have no tasks here. Enjoy your day!</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
